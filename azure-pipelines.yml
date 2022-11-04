@@ -22,3 +22,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1 (77c86f07-dd00-44f2-b413-09e406074512)'
+    appType: 'webAppLinux'
+    WebAppName: 'Demohtml-DEV'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
